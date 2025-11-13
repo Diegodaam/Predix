@@ -44,15 +44,18 @@
 
 .navbar{
   color: white;
-  padding: 20px;
+  padding: 50px;
   display: flex;
   justify-content: flex-end;
 }
 
 .navbar img{
-  width: 200px;
-  position: relative;
-  right: 800px;
+    position: absolute;
+    left: 50px;        
+    top: 20px;
+    width: 200px;
+    cursor: pointer;
+    z-index: 1002;
 }
 
 

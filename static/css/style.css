@@ -51,8 +51,8 @@
   }
 
   .navbar img{
-    position: absolute; /* ⬅ ahora es absoluta */
-    left: 50px;         /* ajusta según necesites */
+    position: absolute;
+    left: 50px;        
     top: 20px;
     width: 200px;
     cursor: pointer;
