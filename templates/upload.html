@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload</title>
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <link href="../static/css/responsive.css" rel="stylesheet"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <section>
+      <!--NAVBAR-->
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}"><img src="../static/img/logo (2).png" alt="Logo" /></a>
+        <button class="hamburger" id="hamburger">☰</button>
+        <div class="labels elements_navbar" id="elements_navbar">
+          <div><a href="{{ url_for('start') }}">Upload</a></div>
+          <div><a href="{{ url_for('analysis') }}">Analysis</a></div>
+        </div>
+      </nav>
+    </section>
+    <hr style="border: 2.5px solid white">
+    <!--Add Tables-->
+    <section class="add_d background">
+      <div>
+        <h1>Welcome to Predix, your smart assistant for business growth! 🚀</h1>
+        <p>
+          Start by uploading your latest weekly or monthly earnings report —
+          just drag and drop your file below 📂. </br>
+          Predix will analyze your data
+          and show you where your next big opportunity is hiding. 💡
+        </p>
+        <p>Make sure your first column is "Week" or "Month", your last column is "Gain", 
+    and all columns in between contain only numbers.</p>
+      </div>
+      <div class="file" id="file" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)" onclick="document.getElementById('fileInput').click();">
+        <h1>Put your file here 📂</h1>
+        <p id="selectedFileName"></p>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="message hide">
+                    <p >{{ messages[-1] }}</p>
+                </div>
+            {% endif %}
+        {% endwith %}
+
+      </div>
+        <form id="uploadFile" action="/uploads" method="POST" enctype="multipart/form-data">
+            <input accept=".xlsx,.xls,.csv" type="file" id="fileInput" name="file" hidden />
+            <button type="submit">Submit File</button>
+        </form>
+    </section>
+
+
+
+
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <link href="../static/css/responsive.css" rel="stylesheet"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="main">
+    <div>
+      <div class="container">
+        <h1>Register</h1>
+        <form method="POST" action="/register">
+          <div>
+            <p>Full name</p>
+            <input
+              type="text"
+              name="full_name"
+              placeholder="Full name"
+              required
+            />
+            <p>Age:</p>
+            <input type="number" name="age" placeholder="Age" required />
+            <p>Phone:</p>
+            <input type="number" name="phone" placeholder="Phone" required />
+            
+          </div>
+          <div>
+            <p>E-mail:</p>
+            <input type="text" name="e-mail" placeholder="E-mail" required />
+            <p>UserName:</p>
+            <input
+              type="text"
+              name="userName"
+              placeholder="UserName"
+              required
+            />
+            <p>Password:</p>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <div id="buttons">
+            <button><a href="{{ url_for('home') }}">Return</a></button>
+            <button type="submit">Register</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <div class="message">
+        <p id="message_report">{{ messages[-1] }}</p>
+      </div>
+      {% endif %} {% endwith %}
+    </div>
+  </body>
+</html>

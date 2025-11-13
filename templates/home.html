@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <link href="../static/css/responsive.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--HEADER-->
+    <section class="gradient-background reveal background_header">
+      <!--NAVBAR-->
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}"><img src="../static/img/logo (2).png" alt="Logo" /></a>
+        <button class="hamburger" id="hamburger">☰</button>
+        <div class="labels elements_navbar" id="elements_navbar">
+          <div><a href="{{ url_for('register') }}">Join</a></div>
+          <div><a href="#about_predix">Overview</a></div>
+          <div><a href="#make_predix">Features</a></div>
+          <div><a href="#tools">Workspace</a></div>
+          <div><a href="#owner">Creator</a></div>
+        </div>
+      </nav>
+
+      <hr>
+      </br>
+
+      <div class="header">
+        <!--INFORMATION ESTA FUERA DEL FLUJO DEL TRABAJO -->
+        <div class="title" id="titleBox1">
+          <div>
+            <h1>PREDIX</h1>
+          </div>
+          <div>
+            <p>
+              Predix is an intelligent analytics platform that uses AI and regression models to analyze your business data, detect trends, and generate investment recommendations to maximize your profits.
+            </p>
+          </div>
+        </div>
+
+        <!--REGISTER-->
+        <div class="register">
+          <div><h1>Register</h1></div>
+          <div>
+            <button onclick="moveTitle('left')" id="toggleBtn1">
+              <a href="{{ url_for('register') }}">Register</a>            </button>
+          </div>
+        </div>
+
+        <div class="log-in">
+          <div><h1>Log in</h1></div>
+          <div>
+            <button onclick="moveTitle('right')" id="toggleBtn2">Log in</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Information about the page-->
+    <section class="information_main background reveal" id="about_predix">
+      <div class="information">
+      <div>
+        <div>
+        <h1>Predict the Future, Empower the Present</h1>
+        <p>
+          Predix is a powerful AI-driven system that helps you make smarter financial and business decisions. By uploading your own datasets, Predix automatically identifies patterns, evaluates correlations, and predicts potential gains or losses for your investments — all through machine learning models.
+        </p>
+        </div>
+      </div>
+      <div>
+        <img src="../static/img/img_1.png" alt="a men taht is watching an graphic"/>
+      </div>
+      </div>
+    </section>
+
+    <!--About what the page does-->
+    <section class="about background" id="make_predix">
+      <!--First point-->
+      <div class="abt" class="reveal">
+        <div>
+          <h2>Visualize data with interactive charts</h2>
+          <p>
+            Upload your data and see instant visual insights. Predix transforms your spreadsheets into structured tables and predictive results, helping you understand which variables truly impact your gains.
+          </p>
+        </div>
+        <div>
+          <img src="../static/img/img_2.png" alt="Image2" />
+        </div>
+      </div>
+
+      <!--Second point-->
+      <div class="abt" class="reveal">
+        <div>
+          <img src="../static/img/img_3.png" alt="Image3"/>
+        </div>
+        <div>
+          <h2>Optimize marketing and inventory strategies</h2>
+          <p>
+            Discover which investments or factors are most profitable. Predix analyzes every variable from your dataset to identify opportunities, detect risks, and guide your next strategic move — all based on real data.
+          </p>
+        </div>
+      </div>
+
+      <!--Third point-->
+      <div class="abt" class="reveal">
+        <div>
+          <h2>Generate detailed business reports</h2>
+          <p>
+            Automatically generate clear, data-backed reports. Each report includes AI-driven insights, estimated gains, and recommendations based on regression analysis — giving you a smarter way to plan your business growth.
+          </p>
+        </div>
+        <div>
+          <img src="../static/img/img_4.png" alt="Image4"/>
+        </div>
+      </div>
+    </section>
+
+    <!--Tools that you can use-->
+    <section class="tools background reveal" id="tools">
+      <div class="squares">
+        <h2>AI Analysis</h2>
+        <p>
+          Our system applies machine learning models (OLS regression, SVR, and RFE) to find the best predictors.
+        </p>
+      </div>
+
+      <div class="squares">
+        <h2>Data Upload</h2>
+        <p>
+          Upload your CSV or Excel datasets to start your analysis.
+        </p>
+      </div>
+  
+      <div class="squares">
+        <h2>Predictions</h2>
+        <p>
+          Get gain estimates and investment recommendations automatically.
+        </p>
+      </div>
+
+      <div class="squares">
+        <h2>Reports Generator</h2>
+        <p>
+          Receive an AI-generated summary with clear metrics and visual feedback.
+        </p>
+      </div>
+    </section>
+
+    <!--owner-->
+    <section class="owner background reveal" id="owner">
+      <img src="../static/img/foto.png" alt="A men with long hair" />
+      <div>
+        <h1>Diego Arturo Aguilar Moreno </h1>
+      <p>
+        We believe that artificial intelligence should be accessible to everyone. Predix was created to turn complex data into understandable insights — empowering every entrepreneur to make better, evidence-based decisions.
+      </p>
+      </div>
+    </section>
+  <hr>
+    <!--Footer-->
+    <section class="footer background reveal">
+      <footer>
+        <div style="width: 200px">
+          <h3>Company</h3>
+          <p>
+            Predix is an intelligent web platform that empowers businesses to analyze and forecast sales performance. It delivers real-time insights through interactive dashboards, AI-driven predictions, and customizable reports.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="#about_predix">Overview</a></li>
+            <li>
+              <a href="#make_predix">Features</a>
+            </li>
+            <li>
+              <a href="#tools">Workspace</a>
+            </li>
+            <li>
+              <a href="#owner">Creator</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Social media</h3>
+          <ul>
+            <li>
+              <a href="https://github.com/Diegodaam/Programas-" class="social"
+                >Git hub<i class="fa fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/diego-arturo-aguilar-moreno-3b3684306/"
+                class="social"
+                >Linkedin<i class="fa fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/drive/folders/1jI2K8eXlumjRnj7C3MQmYJ7eSUGe3hOe?usp=drive_link"
+                class="social"
+                >Drive<i class="fa fa-twitter"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact us</h3>
+          <p>Name: Diego Arturo Aguilar Moreno</p>
+          <p>carrear: software depeloper</p>
+          <p>E-mail: <a href="#">diego.morenodam25@gmail.com</a></p>
+          <p>Phone: <a href="#">3329076411</a></p>
+        </div>
+
+      </footer>
+    </section>
+
+
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>
+
