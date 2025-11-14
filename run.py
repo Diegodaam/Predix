@@ -40,13 +40,27 @@ def register():
         userName = request.form["userName"]
         password = bcrypt.generate_password_hash(request.form["password"]).decode('utf-8')
 
+        if not phone.isdigit() or len(phone) != 10:
+            flash("The phone number must to have 10 digits")
+            return redirect("/register")
+
         cur = mysql.connection.cursor()
 
         cur.execute("SELECT * FROM users WHERE UserName=%s", [userName])
         user = cur.fetchone()
 
-        if user == user:
-            flash(f"The user {user[4]} already exist")
+        cur.execute("SELECT * FROM users WHERE E_mail=%s", [e_mail])
+        e_mail1 = cur.fetchone()
+
+        cur.execute("SELECT * FROM users WHERE Phone=%s", [e_mail])
+        user_phone = cur.fetchone()
+
+        if user:
+            flash(f"The user {userName} already exists")
+            return redirect("/register")
+        
+        if e_mail1:
+            flash(f"The email is already registered")
             return redirect("/register")
 
 
