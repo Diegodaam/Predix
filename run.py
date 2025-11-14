@@ -10,11 +10,11 @@ from sklearn.svm import SVR
 app = Flask(__name__)
 app.secret_key = "clave_secreta_segura"
 
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "Daam25#"   
-app.config["MYSQL_DB"] = "predix"
-app.config["MYSQL_PORT"] = 3307
+app.config['MYSQL_HOST'] = 'birgwsctdqjseds9gnvv-mysql.services.clever-cloud.com'
+app.config['MYSQL_USER'] = 'uaxoxacap5wshffb'
+app.config['MYSQL_PASSWORD'] = 'DotLN7B4biuLI0J84l6L'
+app.config['MYSQL_DB'] = 'birgwsctdqjseds9gnvv'
+app.config['MYSQL_PORT'] = 3306
 app.config['UPLOADS_FOLDER'] = 'UPLOADS'
 os.makedirs(app.config['UPLOADS_FOLDER'], exist_ok=True)
 ALLOWED_EXTENSIONS =    {'xlsx', "xls", 'csv'}
